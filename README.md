@@ -1,6 +1,6 @@
-# roadtype_01
+# Road Surface Type Classification Project
 
-    roadtype_01/
+    road_surface_type/
     ├── data/
     │    ├── __init__.py
     │    ├── transform.py
