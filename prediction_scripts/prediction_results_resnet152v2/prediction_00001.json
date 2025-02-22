@@ -1,0 +1,24 @@
+{
+  "TDML_version": "1.0",
+  "Dataset": {
+    "datasetName": "Road Surface Type Classification",
+    "DataItem": {
+      "FilePath": "/dataset/test/asphalt/000004403.png",
+      "Metadata": {
+        "FrameNumber": 1,
+        "Timestamp": 1739871046134
+      },
+      "Annotations": {
+        "Label": "Asphalt",
+        "Confidence": 0.9997
+      },
+      "GeoData": {
+        "Location": {
+          "Longitude": -48.82422925,
+          "Latitude": -27.69546629
+        },
+        "SpatialReference": "EPSG:4326"
+      }
+    }
+  }
+}

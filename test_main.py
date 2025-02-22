@@ -94,7 +94,7 @@ def test_model(weights_path, data_dir, use_crop, batch_size):
     test_loader = torch.utils.data.DataLoader(test_dataset,
                                             batch_size=batch_size,
                                             shuffle=False,
-                                            num_workers=4)
+                                            num_workers=0)
     class_names = test_dataset.classes
     num_classes = len(class_names)
     print(f"  > Detected {num_classes} classes in test set: {class_names}")

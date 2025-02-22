@@ -14,25 +14,40 @@
     │    ├── evaluation.py
     │    ├── metrics.py
     │    └── plotting.py
-    ├── train_main.py
-    ├── test_main.py
+    ├── prediction_scripts/
+    │    ├── input/
+    │    │    └── **csv_to_json.py**
+    │    ├── input_module.py
+    │    ├── model_module.py
+    │    ├── output_module.py
+    │    ├── preprocessing.py
+    │    ├── postprocessing.py
+    │    └── **predict_main.py**
+    ├── **train_main.py**
+    ├── **test_main.py**
     └── requirements.txt
-
+    
 > pip install -r requirements.txt
 
 >
     python train_main.py \
-        --models resnet50 densenet121 \
-        --data-dir /path/to/dataset \
+        --models resnet152v2 densenet121 \
+        --data-dir /path/to/dataset(Including Train,Val Folders) \
         --epochs 50 \
         --batch-size 32 \
         --lr 1e-4
-        --use-crop \
-
 
 >
     python test_main.py \
-        --weights ./results/resnet50_crop/resnet50_model.pth \
-        --data-dir /path/to/dataset \
+        --weights ./results/results_resnet152v2_full/resnet152v2_model.pth \
+        --data-dir /path/to/dataset(Including Test Folder)
 
+>
+    python predict_main.py \
+        --geopose-json input/input_geopose.json \
+        --model-path ./results/results_resnet152v2_full/resnet152v2_model.pth \
+        --output-dir prediction_results_resnet152v2 \
+        --device cuda
 
+>
+    python csv_to_json.py --csv-path TEST_all_3type.csv --output-json input_geopose.json

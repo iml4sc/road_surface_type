@@ -127,13 +127,13 @@ def train_and_validate_one_model(model_name, data_dir, use_crop, epochs, batch_s
         train_dataset,
         batch_size=batch_size,
         shuffle=True,
-        num_workers=4
+        num_workers=0
     )
     val_loader = torch.utils.data.DataLoader(
         val_dataset,
         batch_size=batch_size,
         shuffle=False,
-        num_workers=4
+        num_workers=0
     )
 
     class_names = train_dataset.classes

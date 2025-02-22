@@ -1,0 +1,4 @@
+FID,full_id,osm_type,road_type,Longitude,Latitude,image_path
+0,w1092200318,way,asphalt,-48.82422925,-27.69546629,/dataset/test/asphalt/000004403.png
+1,w189424451,way,paved,-48.81368356,-27.70137658,/dataset/test/paved/000000009.png
+2,w612664616,way,unpaved,-48.83158233,-27.70339678,/dataset/test/unpaved/000000000 (2).png
