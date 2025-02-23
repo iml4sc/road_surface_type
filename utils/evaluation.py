@@ -14,8 +14,6 @@ def evaluate_model_with_paths(model, data_loader, device, num_classes):
     probs_list = []
     paths_list = []
 
-    softmax = nn.Softmax(dim=1)
-
     with torch.no_grad():
         for images, labels, paths in tqdm(data_loader, desc="Evaluating"):
             images, labels = images.to(device), labels.to(device)
@@ -25,10 +23,17 @@ def evaluate_model_with_paths(model, data_loader, device, num_classes):
             if hasattr(outputs, 'logits'):
                 outputs = outputs.logits
 
-            # Prediction prop
-            probs = softmax(outputs)
-            _, preds = torch.max(outputs, 1)
+            ## Apply activation function based on classification type
+            if num_classes == 2 and outputs.shape[1] == 1:
+                ##> Binary classification: use sigmoid and create two probability columns
+                probs = torch.sigmoid(outputs)
+                probs = torch.cat([1 - probs, probs], dim=1)
+            else:
+                ##> Multi-class classification: apply softmax
+                probs = torch.softmax(outputs, dim=1)
 
+            _, preds = torch.max(outputs, 1)
+            
             y_true_list.extend(labels.cpu().numpy())
             y_pred_list.extend(preds.cpu().numpy())
             probs_list.append(probs.cpu().numpy())
