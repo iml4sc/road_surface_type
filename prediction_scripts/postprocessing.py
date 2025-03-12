@@ -23,7 +23,7 @@ def create_tdml_json(image_path, longitude, latitude, prediction_label, confiden
                     "FrameNumber": 1,
                     "Timestamp": valid_time
                 },
-                "Annotations": {
+                "Predictions": {
                     "Label": prediction_label,
                     "Confidence": round(confidence, 4)
                 },
