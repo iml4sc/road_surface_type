@@ -16,15 +16,15 @@
     │    └── plotting.py
     ├── prediction_scripts/
     │    ├── input/
-    │    │    └── **csv_to_json.py**
+    │    │    └── [csv_to_json.py]
     │    ├── input_module.py
     │    ├── model_module.py
     │    ├── output_module.py
     │    ├── preprocessing.py
     │    ├── postprocessing.py
-    │    └── **predict_main.py**
-    ├── **train_main.py**
-    ├── **test_main.py**
+    │    └── [predict_main.py]
+    ├── [train_main.py]
+    ├── [test_main.py]
     └── requirements.txt
     
 > pip install -r requirements.txt
@@ -50,4 +50,13 @@
         --device cuda
 
 >
-    python csv_to_json.py --csv-path TEST_all_3type.csv --output-json input_geopose.json
+    python prediction_scripts/input/csv_to_json.py --csv-path TEST_all_3type.csv --output-json input_geopose.json
+
+>
+## License
+This project is licensed under the MIT License - see the [LICENSE](./LICENSE) file for details.
+
+## Acknowledgment
+This work was developed in part at the Integrated Media Systems Center (IMSC),
+University of Southern California.  
+Please acknowledge IMSC-USC in any academic or research use of this code.

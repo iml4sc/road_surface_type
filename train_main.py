@@ -1,3 +1,12 @@
+# MIT License
+#
+# Copyright (c) 2025 Integrated Media Systems Center (IMSC),
+# University of Southern California
+# Jooyoung Yoo
+# Dr. Seon Ho Kim
+#
+# This file is licensed under the MIT License. See the LICENSE file for details.
+
 import argparse
 import os
 import torch

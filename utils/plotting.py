@@ -1,3 +1,12 @@
+# MIT License
+#
+# Copyright (c) 2025 Integrated Media Systems Center (IMSC),
+# University of Southern California
+# Jooyoung Yoo
+# Dr. Seon Ho Kim
+#
+# This file is licensed under the MIT License. See the LICENSE file for details.
+
 import os
 import numpy as np
 import matplotlib.pyplot as plt
@@ -71,7 +80,7 @@ def plot_multiclass_roc_pr(y_true, probs, class_names, result_root, prefix="val"
         mean_tpr /= num_classes
         macro_auc = auc(all_fpr, mean_tpr)
         plt.plot(all_fpr, mean_tpr, color='navy', linestyle='--',
-                 label=f"macro-average (AUC={macro_auc:.2f})")
+                label=f"macro-average (AUC={macro_auc:.2f})")
         plt.title(f"Multiclass ROC ({prefix})")
         plt.xlabel("False Positive Rate")
         plt.ylabel("True Positive Rate")
@@ -97,7 +106,7 @@ def plot_multiclass_roc_pr(y_true, probs, class_names, result_root, prefix="val"
         mean_prec /= num_classes
         macro_pr_auc = auc(all_rec, mean_prec)
         plt.plot(all_rec, mean_prec, color='navy', linestyle='--',
-                 label=f"macro-average (AUC={macro_pr_auc:.2f})")
+                label=f"macro-average (AUC={macro_pr_auc:.2f})")
         plt.title(f"Multiclass Precision-Recall ({prefix})")
         plt.xlabel("Recall")
         plt.ylabel("Precision")
