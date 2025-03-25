@@ -59,4 +59,4 @@ This project is licensed under the MIT License - see the [LICENSE](./LICENSE) fi
 ## Acknowledgment
 This work was developed in part at the Integrated Media Systems Center (IMSC),
 University of Southern California.  
-Please acknowledge IMSC-USC in any academic or research use of this code.
+Please acknowledge USC IMSC in any academic or research use of this code.
